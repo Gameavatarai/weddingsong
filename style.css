@@ -850,17 +850,17 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-img {
-        height: 120px; /* Reduced from 180px for mobile */
-        max-width: 300px;
+        height: 80px; /* Further reduced for mobile to prevent overlap */
+        max-width: 250px;
     }
     
     .header {
-        top: 10px;
+        top: 5px;
     }
     
     .nav {
-        padding: 0.6rem 1.5rem;
-        margin-top: 5px;
+        padding: 0.4rem 1rem;
+        margin-top: 2px;
     }
     
     .nav-links {
@@ -869,10 +869,11 @@ section {
     
     .mobile-menu-btn {
         display: block;
+        margin-top: 5px;
     }
     
     .hero {
-        padding: 280px 0 60px; /* Increased top padding for mobile to avoid logo overlap */
+        padding: 200px 0 60px; /* Adjusted for smaller logo */
     }
     
     .hero-content {
@@ -900,8 +901,14 @@ section {
     }
     
     .language-switcher {
-        top: 10px;
-        right: 10px;
+        top: 5px;
+        right: 5px;
+        padding: 3px;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
     }
     
     .pricing-card.featured {
