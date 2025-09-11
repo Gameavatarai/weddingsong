@@ -874,20 +874,26 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-img {
-        height: 80px; /* Further reduced for mobile to prevent overlap */
-        max-width: 250px;
+        height: 60px; /* Further reduced for mobile to prevent overlap */
+        max-width: 200px;
     }
     
     .header {
-        top: 5px;
+        top: 10px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 15px;
-        width: 100%;
+        padding: 10px 15px;
+        width: calc(100% - 30px);
         position: fixed;
-        left: 0;
-        right: 0;
+        left: 15px;
+        right: 15px;
+        background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        z-index: 1000;
     }
     
     .mobile-menu-container {
@@ -912,14 +918,29 @@ section {
         top: auto;
         right: auto;
         margin: 0;
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
     }
     
     .nav {
-        padding: 0.4rem 1rem;
-        margin-top: 0;
-        position: relative;
+        padding: 0;
+        margin: 0;
+        position: static;
         display: flex;
         align-items: center;
+        background: transparent;
+        backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        animation: none;
+    }
+    
+    .nav::before {
+        display: none;
     }
     
     .nav-links {
@@ -928,13 +949,16 @@ section {
     
     .mobile-menu-btn {
         display: block;
-        margin-top: 0;
+        margin: 0;
         position: static;
         transform: none;
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        border-radius: 8px;
     }
     
     .hero {
-        padding: 200px 0 60px; /* Adjusted for smaller logo */
+        padding: 120px 0 60px; /* Adjusted for new mobile header */
     }
     
     .hero-content {
