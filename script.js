@@ -141,11 +141,28 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
-    // Add click handlers for CTA buttons (placeholder functionality)
+    // Add click handlers for CTA buttons
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function(e) {
-            // Prevent default for demo purposes
-            if (this.textContent.includes('Create') || this.textContent.includes('Erstellen') || 
+            // Handle "Order Your Song" buttons - scroll to pricing section
+            if (this.textContent.includes('Order Your Song') || this.textContent.includes('Bestellen Sie Ihr Lied') ||
+                this.textContent.includes('Order Your Song Now') || this.textContent.includes('Bestellen Sie Ihr Lied jetzt')) {
+                e.preventDefault();
+                
+                // Scroll to pricing section
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = pricingSection.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            // Handle other demo buttons
+            else if (this.textContent.includes('Create') || this.textContent.includes('Erstellen') || 
                 this.textContent.includes('Get Started') || this.textContent.includes('Loslegen') ||
                 this.textContent.includes('Start Creating') || this.textContent.includes('Jetzt mit der Erstellung')) {
                 e.preventDefault();
@@ -156,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     : 'Vielen Dank für Ihr Interesse! Dies würde zum Lied-Erstellungsprozess weiterleiten.';
                 
                 alert(message);
-            } else if (this.textContent.includes('Listen') || this.textContent.includes('Hören')) {
+            } 
+            // Handle "Listen to Samples" buttons
+            else if (this.textContent.includes('Listen') || this.textContent.includes('Hören')) {
                 e.preventDefault();
                 
                 // Show the audio player
