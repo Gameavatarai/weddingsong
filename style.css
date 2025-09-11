@@ -68,6 +68,9 @@ body {
 @media (max-width: 768px) {
     .language-switcher.desktop-only {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        z-index: -1 !important;
     }
 }
 
