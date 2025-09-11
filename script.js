@@ -144,34 +144,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add click handlers for CTA buttons
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function(e) {
+            console.log('Button clicked:', this.textContent); // Debug log
+            
             // Handle "Order Your Song" buttons - scroll to pricing section
             if (this.textContent.includes('Order Your Song') || this.textContent.includes('Bestellen Sie Ihr Lied') ||
                 this.textContent.includes('Order Your Song Now') || this.textContent.includes('Bestellen Sie Ihr Lied jetzt')) {
                 e.preventDefault();
+                console.log('Order button detected, scrolling to pricing'); // Debug log
                 
                 // Scroll to pricing section
                 const pricingSection = document.getElementById('pricing');
                 if (pricingSection) {
-                    // Calculate header height - different approach for mobile
-                    const header = document.querySelector('.header');
-                    let headerHeight = 0;
+                    console.log('Pricing section found'); // Debug log
                     
-                    if (header) {
-                        // Get the actual rendered height
-                        headerHeight = header.getBoundingClientRect().height;
-                        
-                        // Add extra offset for mobile to account for different header structure
-                        if (window.innerWidth <= 768) {
-                            headerHeight += 20; // Extra padding for mobile
-                        }
+                    // Simplified approach for mobile - use a fixed offset
+                    let targetPosition;
+                    if (window.innerWidth <= 768) {
+                        // Mobile: use a simpler calculation
+                        targetPosition = pricingSection.offsetTop - 100; // Fixed offset for mobile
+                        console.log('Mobile scroll target:', targetPosition); // Debug log
+                    } else {
+                        // Desktop: use header height calculation
+                        const header = document.querySelector('.header');
+                        let headerHeight = header ? header.getBoundingClientRect().height : 0;
+                        targetPosition = pricingSection.offsetTop - headerHeight - 20;
+                        console.log('Desktop scroll target:', targetPosition); // Debug log
                     }
-                    
-                    const targetPosition = pricingSection.offsetTop - headerHeight - 20;
                     
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
+                } else {
+                    console.log('Pricing section not found'); // Debug log
                 }
             }
             // Handle other demo buttons
