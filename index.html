@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Wedding Song - Personalized Wedding Songs" data-de="Wedding Song - Personalisierte Hochzeitslieder">Wedding Song - Personalized Wedding Songs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music (Hidden) -->
+    <audio id="background-music" loop autoplay muted>
+        <source src="Forever Begins.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-de" class="lang-btn">DE</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="Logo2.png" alt="Wedding Song" class="logo-img">
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-links">
+                <a href="#features" data-en="Features" data-de="Funktionen">Features</a>
+                <a href="#how-it-works" data-en="How It Works" data-de="Wie es funktioniert">How It Works</a>
+                <a href="#pricing" data-en="Pricing" data-de="Preise">Pricing</a>
+                <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-en="We Create Your Perfect Wedding Song" data-de="Wir erstellen Ihr perfektes Hochzeitslied">We Create Your Perfect Wedding Song</h1>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" data-en="Order Your Song" data-de="Bestellen Sie Ihr Lied">Order Your Song</button>
+                <button id="listen-samples-btn" class="btn btn-secondary" data-en="Listen to Samples" data-de="Hören Sie sich Beispiele an">Listen to Samples</button>
+            </div>
+            <p class="hero-subtitle" data-en="Share your love story with us and receive a beautiful, personalized wedding song delivered directly to your email. Our specialists craft unique songs that capture your journey together." data-de="Teilen Sie Ihre Liebesgeschichte mit uns und erhalten Sie ein wunderschönes, personalisiertes Hochzeitslied direkt per E-Mail. Unsere Spezialisten erstellen einzigartige Lieder, die Ihre gemeinsame Reise einfangen.">Share your love story with us and receive a beautiful, personalized wedding song delivered directly to your email. Our specialists craft unique songs that capture your journey together.</p>
+            
+            <!-- Audio Player Section (Hidden by default) -->
+            <div id="audio-player-container" class="audio-player-container">
+                <div class="audio-player">
+                    <h3 data-en="Sample: Durch Sturm und Feuer" data-de="Beispiel: Durch Sturm und Feuer">Sample: Durch Sturm und Feuer</h3>
+                    <audio id="sample-audio" controls>
+                        <source src="Durch Sturm und Feuer.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <button id="close-player" class="btn btn-outline" data-en="Close" data-de="Schließen">Close</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="music-notes">♪ ♫ ♪ ♫</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-en="Why Choose Wedding Song?" data-de="Warum Wedding Song wählen?">Why Choose Wedding Song?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3 data-en="Expert Music Specialists" data-de="Experten Musik-Spezialisten">Expert Music Specialists</h3>
+                    <p data-en="Our team of music specialists uses advanced technology to create unique melodies and lyrics based on your personal story." data-de="Unser Team von Musik-Spezialisten nutzt fortschrittliche Technologie, um einzigartige Melodien und Texte basierend auf Ihrer persönlichen Geschichte zu erstellen.">Our team of music specialists uses advanced technology to create unique melodies and lyrics based on your personal story.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3 data-en="Delivered to Your Email" data-de="Per E-Mail zugestellt">Delivered to Your Email</h3>
+                    <p data-en="Receive your personalized wedding song directly in your inbox. No software needed - we handle everything for you." data-de="Erhalten Sie Ihr personalisiertes Hochzeitslied direkt in Ihrem Posteingang. Keine Software erforderlich - wir kümmern uns um alles für Sie.">Receive your personalized wedding song directly in your inbox. No software needed - we handle everything for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-en="Fast Turnaround" data-de="Schnelle Bearbeitung">Fast Turnaround</h3>
+                    <p data-en="Get your custom wedding song within 24-48 hours. Simply provide your story and preferences through our order form." data-de="Erhalten Sie Ihr individuelles Hochzeitslied innerhalb von 24-48 Stunden. Teilen Sie einfach Ihre Geschichte und Wünsche über unser Bestellformular mit.">Get your custom wedding song within 24-48 hours. Simply provide your story and preferences through our order form.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3 data-en="Professional Service" data-de="Professioneller Service">Professional Service</h3>
+                    <p data-en="High-quality audio production with personal consultation to ensure your song perfectly matches your vision." data-de="Hochwertige Audioproduktion mit persönlicher Beratung, um sicherzustellen, dass Ihr Lied perfekt zu Ihrer Vision passt.">High-quality audio production with personal consultation to ensure your song perfectly matches your vision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-en="How It Works" data-de="Wie es funktioniert">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 data-en="Place Your Order" data-de="Bestellung aufgeben">Place Your Order</h3>
+                    <p data-en="Choose your package and fill out our order form with your love story, names, and special moments." data-de="Wählen Sie Ihr Paket und füllen Sie unser Bestellformular mit Ihrer Liebesgeschichte, Namen und besonderen Momenten aus.">Choose your package and fill out our order form with your love story, names, and special moments.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 data-en="We Create Your Song" data-de="Wir erstellen Ihr Lied">We Create Your Song</h3>
+                    <p data-en="Our music specialists craft your personalized wedding song using advanced technology and your unique story." data-de="Unsere Musik-Spezialisten erstellen Ihr personalisiertes Hochzeitslied mit fortschrittlicher Technologie und Ihrer einzigartigen Geschichte.">Our music specialists craft your personalized wedding song using advanced technology and your unique story.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 data-en="Quality Check" data-de="Qualitätsprüfung">Quality Check</h3>
+                    <p data-en="We review and perfect your song to ensure it meets our high standards and captures your vision." data-de="Wir überprüfen und perfektionieren Ihr Lied, um sicherzustellen, dass es unseren hohen Standards entspricht und Ihre Vision einfängt.">We review and perfect your song to ensure it meets our high standards and captures your vision.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 data-en="Delivered to Email" data-de="Per E-Mail zugestellt">Delivered to Email</h3>
+                    <p data-en="Receive your custom wedding song files directly in your email inbox within 24-48 hours." data-de="Erhalten Sie Ihre individuellen Hochzeitslied-Dateien direkt in Ihrem E-Mail-Posteingang innerhalb von 24-48 Stunden.">Receive your custom wedding song files directly in your email inbox within 24-48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title" data-en="Choose Your Package" data-de="Wählen Sie Ihr Paket">Choose Your Package</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 data-en="Basic" data-de="Basis">Basic</h3>
+                    <div class="price">$69</div>
+                    <ul>
+                        <li data-en="1 Custom Song" data-de="1 individuelles Lied">1 Custom Song</li>
+                        <li data-en="MP3 File via Email" data-de="MP3-Datei per E-Mail">MP3 File via Email</li>
+                        <li data-en="Ballad" data-de="Ballade">Ballad</li>
+                        <li data-en="24-48h Delivery" data-de="24-48h Lieferung">24-48h Delivery</li>
+                        <li data-en="1 Revision Included" data-de="1 Bearbeitung inklusive">1 Revision Included</li>
+                        <li data-en="Email Support" data-de="E-Mail Support">Email Support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/14AdR85MY50BgdlgkLgnK0c" class="btn btn-outline" data-en="Order your Song" data-de="Bestellen Sie Ihr Lied">Order your Song</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge" data-en="Most Popular" data-de="Am beliebtesten">Most Popular</div>
+                    <h3 data-en="Premium" data-de="Premium">Premium</h3>
+                    <div class="price">$119</div>
+                    <ul>
+                        <li data-en="1 Custom Song" data-de="1 individuelles Lied">1 Custom Song</li>
+                        <li data-en="WAV + MP3 via Email" data-de="WAV + MP3 per E-Mail">WAV + MP3 via Email</li>
+                        <li data-en="Any Genre" data-de="Beliebiges Genre">Any Genre</li>
+                        <li data-en="24h Priority Delivery" data-de="24h Prioritätslieferung">24h Priority Delivery</li>
+                        <li data-en="2 Revisions Included" data-de="2 Überarbeitungen inklusive">2 Revisions Included</li>
+                        <li data-en="Phone & Email Support" data-de="Telefon & E-Mail Support">Phone & Email Support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/8x27sKcbmgJj9OXd8zgnK0d" class="btn btn-primary" data-en="Order your Song" data-de="Bestellen Sie Ihr Lied">Order your Song</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-en="Deluxe" data-de="Deluxe">Deluxe</h3>
+                    <div class="price">$249</div>
+                    <ul>
+                        <li data-en="2 Custom Songs" data-de="2 individuelle Lieder">2 Custom Songs</li>
+                        <li data-en="WAV + MP3 via Email" data-de="WAV + MP3 per E-Mail">WAV + MP3 via Email</li>
+                        <li data-en="All Vocal Styles including Duet" data-de="Alle Gesangsstile inklusive Duett">All Vocal Styles including Duet</li>
+                        <li data-en="24h Priority Delivery" data-de="24h Prioritätslieferung">24h Priority Delivery</li>
+                        <li data-en="Unlimited Revisions" data-de="Unbegrenzte Überarbeitungen">Unlimited Revisions</li>
+                        <li data-en="Phone & Email Support" data-de="Telefon & E-Mail Support">Phone & Email Support</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/00wcN4a3egJjaT16KbgnK0e" class="btn btn-outline" data-en="Order your Song" data-de="Bestellen Sie Ihr Lied">Order your Song</a>
+                </div>
+            </div>
+            
+            <!-- Extras Card -->
+            <div class="pricing-card" style="margin-top: 2rem; max-width: 1000px; width: 100%;">
+                <h3 data-en="Extras" data-de="Extras">Extras</h3>
+                <ul>
+                    <li style="display: flex; justify-content: space-between; align-items: center;">
+                        <span data-en="Extra Revision - $15" data-de="Extra Überarbeitung - $15">Extra Revision - $15</span>
+                        <a href="https://buy.stripe.com/5kQ3cu8ZaakV7GP3xZgnK0f" class="btn btn-outline" style="min-width: auto; padding: 8px 16px; margin-left: 15px;" data-en="Book Now" data-de="Jetzt buchen">Book Now</a>
+                    </li>
+                    <li style="display: flex; justify-content: space-between; align-items: center;">
+                        <span data-en="Express Delivery - Delivery within 12h - $50" data-de="Express Lieferung - Lieferung innerhalb von 12h - $50">Express Delivery - Delivery within 12h - $50</span>
+                        <a href="https://buy.stripe.com/28EaEWfny78J9OX1pRgnK0g" class="btn btn-outline" style="min-width: auto; padding: 8px 16px; margin-left: 15px;" data-en="Book Now" data-de="Jetzt buchen">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 data-en="Ready to Order Your Perfect Wedding Song?" data-de="Bereit, Ihr perfektes Hochzeitslied zu bestellen?">Ready to Order Your Perfect Wedding Song?</h2>
+            <p data-en="Join thousands of couples who have made their wedding day extra special with our personalized song service delivered directly to their email." data-de="Schließen Sie sich Tausenden von Paaren an, die ihren Hochzeitstag mit unserem personalisierten Liedservice, der direkt per E-Mail geliefert wird, zu etwas ganz Besonderem gemacht haben.">Join thousands of couples who have made their wedding day extra special with our personalized song service delivered directly to their email.</p>
+            <button class="btn btn-primary btn-large" data-en="Order Your Song Now" data-de="Bestellen Sie Ihr Lied jetzt">Order Your Song Now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wedding Song</h3>
+                    <p data-en="Wedding Song is a brand of Game Avatar AI, established 2025." data-de="Wedding Song ist eine Marke von Game Avatar AI, gegründet 2025.">Wedding Song is a brand of Game Avatar AI, established 2025.</p>
+                    <p data-en="Creating magical moments through personalized wedding songs." data-de="Magische Momente durch personalisierte Hochzeitslieder schaffen.">Creating magical moments through personalized wedding songs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-de="Schnelle Links">Quick Links</h4>
+                    <ul>
+                        <li><a href="#features" data-en="Features" data-de="Funktionen">Features</a></li>
+                        <li><a href="#how-it-works" data-en="How It Works" data-de="Wie es funktioniert">How It Works</a></li>
+                        <li><a href="#pricing" data-en="Pricing" data-de="Preise">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Support" data-de="Support">Support</h4>
+                    <ul>
+                        <li><a href="#" data-en="FAQ" data-de="FAQ">FAQ</a></li>
+                        <li><a href="#" data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</a></li>
+                        <li><a href="#" id="pricing-policy-link" data-en="Pricing Policy" data-de="Preisrichtlinie">Pricing Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Legal" data-de="Rechtliches">Legal</h4>
+                    <ul>
+                        <li><a href="agb.html" data-en="Terms & Conditions" data-de="AGB">Terms & Conditions</a></li>
+                        <li><a href="datenschutz.html" data-en="Privacy Policy" data-de="Datenschutz">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-de="Kontakt">Contact</h4>
+                    <p>Email: gameavatarai@gmail.com</p>
+                    <p data-en="Phone: +49 1511 4423242" data-de="Telefon: +49 1511 4423242">Phone: +49 1511 4423242</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2025 Wedding Song. All rights reserved." data-de="© 2025 Wedding Song. Alle Rechte vorbehalten.">&copy; 2025 Wedding Song. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pricing Policy Popup -->
+    <div id="pricing-policy-popup" class="popup-container">
+        <div class="popup-content">
+            <h3 data-en="Pricing Policy" data-de="Preisrichtlinie">Pricing Policy</h3>
+            <div class="popup-body">
+                <p data-en="All prices are in USD and include all applicable taxes. Payment is required upfront before we begin creating your personalized wedding song." 
+                   data-de="Alle Preise sind in USD und beinhalten alle anwendbaren Steuern. Die Zahlung ist im Voraus erforderlich, bevor wir mit der Erstellung Ihres personalisierten Hochzeitsliedes beginnen.">
+                   All prices are in USD and include all applicable taxes. Payment is required upfront before we begin creating your personalized wedding song.
+                </p>
+                <p data-en="Refund Policy: We offer a 100% satisfaction guarantee. If you're not completely satisfied with your song, we'll revise it according to your package terms or provide a full refund."
+                   data-de="Rückerstattungsrichtlinie: Wir bieten eine 100%ige Zufriedenheitsgarantie. Wenn Sie mit Ihrem Lied nicht vollständig zufrieden sind, überarbeiten wir es gemäß Ihren Paketbedingungen oder erstatten den vollen Betrag zurück.">
+                   Refund Policy: We offer a 100% satisfaction guarantee. If you're not completely satisfied with your song, we'll revise it according to your package terms or provide a full refund.
+                </p>
+                <p data-en="Delivery times are estimates and may vary depending on order volume and complexity. Rush orders may be available for an additional fee."
+                   data-de="Lieferzeiten sind Schätzungen und können je nach Auftragsvolumen und Komplexität variieren. Eilbestellungen können gegen eine zusätzliche Gebühr verfügbar sein.">
+                   Delivery times are estimates and may vary depending on order volume and complexity. Rush orders may be available for an additional fee.
+                </p>
+            </div>
+            <button id="close-pricing-policy" class="btn btn-outline" data-en="Close" data-de="Schließen">Close</button>
+        </div>
+    </div>
+
+    <!-- Contact Form Popup -->
+    <div id="contact-form-popup" class="popup-container">
+        <div class="popup-content">
+            <h3 data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</h3>
+            <div class="popup-body">
+                <form action="https://formsubmit.co/gameavatarai@gmail.com" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-en="Your Name" data-de="Ihr Name">Your Name</label>
+                        <input type="text" id="name" name="Name 1" required class="form-input" placeholder="John & Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="question" data-en="Your Question" data-de="Ihre Frage">Your Question</label>
+                        <textarea id="question" name="Your Question" required class="form-input" rows="4" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-en="Your Email" data-de="Ihre E-Mail">Your Email</label>
+                        <input type="email" id="email" name="email" required class="form-input" placeholder="your.email@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-en="Send Message" data-de="Nachricht senden">Send Message</button>
+                </form>
+            </div>
+            <button id="close-contact-form" class="btn btn-outline" data-en="Close" data-de="Schließen">Close</button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent-popup" class="cookie-popup-container active">
+        <div class="cookie-popup-content">
+            <h3 data-en="We Use Cookies" data-de="Wir verwenden Cookies">We Use Cookies</h3>
+            <div class="cookie-popup-body">
+                <p data-en="This website uses cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies." 
+                   data-de="Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website erhalten. Durch die weitere Nutzung dieser Website stimmen Sie unserer Verwendung von Cookies zu.">
+                   This website uses cookies to ensure you get the best experience on our website. By continuing to use this site, you consent to our use of cookies.
+                </p>
+            </div>
+            <div class="cookie-popup-buttons">
+                <button id="accept-cookies" class="btn btn-primary" data-en="Accept" data-de="Akzeptieren">Accept</button>
+                <button id="decline-cookies" class="btn btn-outline" data-en="Decline" data-de="Ablehnen">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
