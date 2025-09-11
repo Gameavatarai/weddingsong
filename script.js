@@ -152,7 +152,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Scroll to pricing section
                 const pricingSection = document.getElementById('pricing');
                 if (pricingSection) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    // Calculate header height - different approach for mobile
+                    const header = document.querySelector('.header');
+                    let headerHeight = 0;
+                    
+                    if (header) {
+                        // Get the actual rendered height
+                        headerHeight = header.getBoundingClientRect().height;
+                        
+                        // Add extra offset for mobile to account for different header structure
+                        if (window.innerWidth <= 768) {
+                            headerHeight += 20; // Extra padding for mobile
+                        }
+                    }
+                    
                     const targetPosition = pricingSection.offsetTop - headerHeight - 20;
                     
                     window.scrollTo({
