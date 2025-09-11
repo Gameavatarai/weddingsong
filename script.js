@@ -34,102 +34,54 @@ document.addEventListener('DOMContentLoaded', function() {
 // Language switching functionality
 document.addEventListener('DOMContentLoaded', function() {
     const langButtons = document.querySelectorAll('.lang-btn');
-    const elementsWithLang = document.querySelectorAll('[data-en][data-de]');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const elementsToTranslate = document.querySelectorAll('[data-en][data-de]');
     
-    // Set default language
-    let currentLang = 'en';
-    
-    // Initialize language
-    updateLanguage(currentLang);
-    
-    // Handle active navigation state
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if(pageYOffset >= (sectionTop - sectionHeight/3)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if(link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Add event listeners to language buttons
-    langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedLang = this.id.split('-')[1]; // Extract 'en' or 'de' from 'lang-en' or 'lang-de'
-            
-            if (selectedLang !== currentLang) {
-                currentLang = selectedLang;
-                updateLanguage(currentLang);
-                updateActiveButton(this);
-            }
-        });
-    });
+    // Set initial language based on browser preference or default to English
+    let currentLang = localStorage.getItem('language') || 
+                     (navigator.language.startsWith('de') ? 'de' : 'en');
     
     function updateLanguage(lang) {
-        // Add fade transition
-        document.body.classList.add('fade-transition');
+        currentLang = lang;
+        localStorage.setItem('language', lang);
         
-        setTimeout(() => {
-            // Update all elements with language data attributes
-            elementsWithLang.forEach(element => {
-                const text = element.getAttribute(`data-${lang}`);
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-            
-            // Update document title
-            const titleElement = document.querySelector('title');
-            if (titleElement) {
-                const titleText = titleElement.getAttribute(`data-${lang}`);
-                if (titleText) {
-                    titleElement.textContent = titleText;
-                }
+        // Update all translatable elements
+        elementsToTranslate.forEach(element => {
+            const text = element.getAttribute(`data-${lang}`);
+            if (text) {
+                element.textContent = text;
             }
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Remove fade transition
-            document.body.classList.remove('fade-transition');
-            document.body.classList.add('active');
-            
-            // Store language preference
-            localStorage.setItem('preferredLanguage', lang);
-        }, 150);
-    }
-    
-    function updateActiveButton(activeButton) {
-        // Remove active class from all buttons
-        langButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        activeButton.classList.add('active');
-    }
-    
-    // Check for stored language preference
-    const storedLang = localStorage.getItem('preferredLanguage');
-    if (storedLang && (storedLang === 'en' || storedLang === 'de')) {
-        currentLang = storedLang;
-        updateLanguage(currentLang);
+        });
         
-        // Update active button
-        const activeButton = document.getElementById(`lang-${currentLang}`);
-        if (activeButton) {
-            updateActiveButton(activeButton);
-        }
+        // Update active button state for both desktop and mobile buttons
+        langButtons.forEach(btn => {
+            btn.classList.remove('active');
+            // Handle both desktop (lang-en, lang-de) and mobile (lang-en-mobile, lang-de-mobile) buttons
+            if (btn.id === `lang-${lang}` || btn.id === `lang-${lang}-mobile`) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update document language
+        document.documentElement.lang = lang;
     }
+    
+    // Add click event listeners to language buttons
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Extract language from id (handles both 'lang-en' and 'lang-en-mobile' formats)
+            const lang = this.id.includes('-mobile') ? 
+                        this.id.split('-')[1] : // For mobile buttons: lang-en-mobile -> en
+                        this.id.split('-')[1];  // For desktop buttons: lang-en -> en
+            updateLanguage(lang);
+        });
+    });
+    
+    // Initialize with current language
+    updateLanguage(currentLang);
+});
+
+// Additional functionality
+document.addEventListener('DOMContentLoaded', function() {
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

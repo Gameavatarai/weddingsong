@@ -34,10 +34,6 @@ body {
 
 /* Language Switcher */
 .language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
     display: flex;
     gap: 5px;
     background: rgba(255, 255, 255, 0.3);
@@ -46,6 +42,40 @@ body {
     padding: 5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Desktop language switcher */
+.language-switcher.desktop-only {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Mobile language switcher */
+.language-switcher.mobile-only {
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 15px;
+    gap: 3px;
+}
+
+/* Hide desktop language switcher on mobile */
+@media (max-width: 768px) {
+    .language-switcher.desktop-only {
+        display: none !important;
+    }
+}
+
+/* Hide mobile language switcher on desktop */
+@media (min-width: 769px) {
+    .language-switcher.mobile-only {
+        display: none !important;
+    }
 }
 
 .lang-btn {
@@ -925,6 +955,7 @@ section {
         padding: 0 !important;
         border-radius: 15px !important;
         gap: 3px !important;
+        display: flex !important;
     }
     
     .lang-btn {
