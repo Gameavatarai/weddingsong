@@ -874,55 +874,55 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .logo-img {
-        height: 60px; /* Further reduced for mobile to prevent overlap */
-        max-width: 200px;
+        height: 60px !important; /* Further reduced for mobile to prevent overlap */
+        max-width: 200px !important;
     }
     
     .header {
-        top: 10px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
-        width: calc(100% - 30px);
-        position: fixed;
-        left: 15px;
-        right: 15px;
-        background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
-        backdrop-filter: blur(20px);
-        border-radius: 25px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        z-index: 1000;
+        top: 10px !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: calc(100% - 30px) !important;
+        position: fixed !important;
+        left: 15px !important;
+        right: 15px !important;
+        background: linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)) !important;
+        backdrop-filter: blur(20px) !important;
+        border-radius: 25px !important;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        z-index: 1000 !important;
     }
     
     .mobile-menu-container {
-        display: flex;
-        align-items: center;
-        flex: 0 0 auto;
-        order: 1;
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        order: 1 !important;
     }
     
     .logo-container {
-        margin-bottom: 0;
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        order: 2;
+        margin-bottom: 0 !important;
+        flex: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+        order: 2 !important;
     }
     
     .language-switcher {
-        position: static;
-        flex: 0 0 auto;
-        order: 3;
-        top: auto;
-        right: auto;
-        margin: 0;
-        background: transparent;
-        backdrop-filter: none;
-        border: none;
-        box-shadow: none;
-        padding: 0;
+        position: static !important;
+        flex: 0 0 auto !important;
+        order: 3 !important;
+        top: auto !important;
+        right: auto !important;
+        margin: 0 !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
     }
     
     .nav {

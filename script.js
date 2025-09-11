@@ -219,47 +219,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add mobile menu toggle (for future enhancement)
-    const createMobileMenu = () => {
-        const nav = document.querySelector('.nav');
+    // Mobile menu toggle functionality
+    const setupMobileMenu = () => {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
         
-        // Create mobile menu button
-        const mobileMenuBtn = document.createElement('button');
-        mobileMenuBtn.className = 'mobile-menu-btn';
-        mobileMenuBtn.innerHTML = '☰';
-        mobileMenuBtn.style.display = 'none';
-        mobileMenuBtn.style.background = 'none';
-        mobileMenuBtn.style.border = 'none';
-        mobileMenuBtn.style.fontSize = '1.5rem';
-        mobileMenuBtn.style.color = '#333';
-        mobileMenuBtn.style.cursor = 'pointer';
-        
-        nav.appendChild(mobileMenuBtn);
-        
-        // Toggle mobile menu
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-active');
-        });
-        
-        // Show/hide mobile menu button based on screen size
-        const checkScreenSize = () => {
-            if (window.innerWidth <= 768) {
-                mobileMenuBtn.style.display = 'block';
-                navLinks.style.display = navLinks.classList.contains('mobile-active') ? 'flex' : 'none';
-            } else {
-                mobileMenuBtn.style.display = 'none';
-                navLinks.style.display = 'flex';
-                navLinks.classList.remove('mobile-active');
-            }
-        };
-        
-        window.addEventListener('resize', checkScreenSize);
-        checkScreenSize();
+        if (mobileMenuBtn && navLinks) {
+            // Toggle mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-active');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('mobile-active');
+                }
+            });
+        }
     };
     
     // Initialize mobile menu
-    createMobileMenu();
+    setupMobileMenu();
     
     // Add loading animation
     window.addEventListener('load', function() {
