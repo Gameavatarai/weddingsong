@@ -464,4 +464,42 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Cookies declined');
         });
     }
+    
+    // Set up thank you popup
+    const thankYouPopup = document.getElementById('thank-you-popup');
+    const closeThankYou = document.getElementById('close-thank-you');
+    
+    if (thankYouPopup && closeThankYou) {
+        // Check if we should show the thank you popup (from URL parameter)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+            // Show thank you popup
+            setTimeout(() => {
+                thankYouPopup.classList.add('active');
+            }, 500);
+            
+            // Clean up URL by removing the parameter
+            const newUrl = window.location.pathname;
+            window.history.replaceState({}, document.title, newUrl);
+        }
+        
+        // Close popup when clicking the close button
+        closeThankYou.addEventListener('click', function() {
+            thankYouPopup.classList.remove('active');
+        });
+        
+        // Close popup when clicking outside the content
+        thankYouPopup.addEventListener('click', function(e) {
+            if (e.target === thankYouPopup) {
+                thankYouPopup.classList.remove('active');
+            }
+        });
+        
+        // Close popup when pressing ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && thankYouPopup.classList.contains('active')) {
+                thankYouPopup.classList.remove('active');
+            }
+        });
+    }
 });

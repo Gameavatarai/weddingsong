@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Order Form - Premium Package | Wedding Song" data-de="Bestellformular - Premium Paket | Wedding Song">Order Form - Premium Package | Wedding Song</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for form page */
+        .form-container {
+            background: #e6d9d8;
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .form-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(254, 252, 248, 0.2));
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(165deg, rgba(212, 175, 55, 0.5), rgba(244, 208, 63, 0.5), rgba(232, 180, 203, 0.5), rgba(212, 175, 55, 0.5));
+            background-size: 100% 100%;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-title {
+            font-family: 'GreatVibes', 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(165deg, #d4af37, #f4d03f, #e8b4cb, #d4af37);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+        
+        .package-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .package-price {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .package-features li {
+            padding: 0.3rem 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .order-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: #d4af37;
+            font-weight: 500;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .required {
+            color: #e74c3c;
+        }
+        
+        .submit-btn {
+            align-self: center;
+            margin-top: 1rem;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 100px 0 60px;
+            }
+            
+            .form-card {
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .form-title {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher desktop-only">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-de" class="lang-btn">DE</button>
+    </div>
+
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="Logo2.png" alt="Wedding Song" class="logo-img">
+        </div>
+        
+        <!-- Mobile Language Switcher -->
+        <div class="language-switcher mobile-only">
+            <button id="lang-en-mobile" class="lang-btn">EN</button>
+            <button id="lang-de-mobile" class="lang-btn">DE</button>
+        </div>
+    </header>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <div class="form-card">
+            <div class="premium-badge" data-en="Most Popular" data-de="Am beliebtesten">Most Popular</div>
+            <h1 class="form-title" data-en="Order Your Premium Wedding Song" data-de="Bestellen Sie Ihr Premium Hochzeitslied">Order Your Premium Wedding Song</h1>
+            
+            <!-- Package Information -->
+            <div class="package-info">
+                <div class="package-price">$119</div>
+                <ul class="package-features">
+                    <li data-en="✓ 1 Custom Song" data-de="✓ 1 individuelles Lied">✓ 1 Custom Song</li>
+                    <li data-en="✓ WAV + MP3 via Email" data-de="✓ WAV + MP3 per E-Mail">✓ WAV + MP3 via Email</li>
+                    <li data-en="✓ Any Genre" data-de="✓ Beliebiges Genre">✓ Any Genre</li>
+                    <li data-en="✓ 24h Priority Delivery" data-de="✓ 24h Prioritätslieferung">✓ 24h Priority Delivery</li>
+                    <li data-en="✓ 2 Revisions Included" data-de="✓ 2 Überarbeitungen inklusive">✓ 2 Revisions Included</li>
+                    <li data-en="✓ Phone & Email Support" data-de="✓ Telefon & E-Mail Support">✓ Phone & Email Support</li>
+                </ul>
+            </div>
+
+            <!-- Order Form -->
+            <form action="https://formsubmit.co/auftrag@wedding-song.de" method="POST" class="order-form">
+                <!-- Hidden fields for FormSubmit configuration -->
+                <input type="hidden" name="_subject" value="New Premium Package Order - Wedding Song">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://wedding-song.de/index.html?submitted=true">
+                <input type="hidden" name="Package" value="Premium - $119">
+                
+                <!-- Couple Names -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="partner1" data-en="Partner 1 Name" data-de="Partner 1 Name">Partner 1 Name <span class="required">*</span></label>
+                        <input type="text" id="partner1" name="Partner 1 Name" required class="form-input" placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="partner2" data-en="Partner 2 Name" data-de="Partner 2 Name">Partner 2 Name <span class="required">*</span></label>
+                        <input type="text" id="partner2" name="Partner 2 Name" required class="form-input" placeholder="Jane">
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" data-en="Email Address" data-de="E-Mail Adresse">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="Email" required class="form-input" placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-en="Phone Number" data-de="Telefonnummer">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="Phone" required class="form-input" placeholder="+1 234 567 8900">
+                    </div>
+                </div>
+
+                <!-- Wedding Date -->
+                <div class="form-group">
+                    <label for="wedding-date" data-en="Wedding Date" data-de="Hochzeitsdatum">Wedding Date <span class="required">*</span></label>
+                    <input type="date" id="wedding-date" name="Wedding Date" required class="form-input">
+                </div>
+
+                <!-- Song Language -->
+                <div class="form-group">
+                    <label for="song-language" data-en="Preferred Song Language" data-de="Bevorzugte Liedsprache">Preferred Song Language <span class="required">*</span></label>
+                    <select id="song-language" name="Song Language" required class="form-select">
+                        <option value="" data-en="Select Language" data-de="Sprache wählen">Select Language</option>
+                        <option value="English" data-en="English" data-de="Englisch">English</option>
+                        <option value="German" data-en="German" data-de="Deutsch">German</option>
+                        <option value="Spanish" data-en="Spanish" data-de="Spanisch">Spanish</option>
+                        <option value="French" data-en="French" data-de="Französisch">French</option>
+                        <option value="Italian" data-en="Italian" data-de="Italienisch">Italian</option>
+                        <option value="Portuguese" data-en="Portuguese" data-de="Portugiesisch">Portuguese</option>
+                        <option value="Dutch" data-en="Dutch" data-de="Niederländisch">Dutch</option>
+                        <option value="Other" data-en="Other (please specify in story)" data-de="Andere (bitte in Geschichte angeben)">Other (please specify in story)</option>
+                    </select>
+                </div>
+
+                <!-- Music Genre -->
+                <div class="form-group">
+                    <label for="music-genre" data-en="Preferred Music Genre" data-de="Bevorzugtes Musikgenre">Preferred Music Genre <span class="required">*</span></label>
+                    <select id="music-genre" name="Music Genre" required class="form-select">
+                        <option value="" data-en="Select Genre" data-de="Genre wählen">Select Genre</option>
+                        <option value="Ballad" data-en="Ballad" data-de="Ballade">Ballad</option>
+                        <option value="Pop" data-en="Pop" data-de="Pop">Pop</option>
+                        <option value="Rock" data-en="Rock" data-de="Rock">Rock</option>
+                        <option value="Country" data-en="Country" data-de="Country">Country</option>
+                        <option value="Folk" data-en="Folk" data-de="Folk">Folk</option>
+                        <option value="Jazz" data-en="Jazz" data-de="Jazz">Jazz</option>
+                        <option value="R&B/Soul" data-en="R&B/Soul" data-de="R&B/Soul">R&B/Soul</option>
+                        <option value="Acoustic" data-en="Acoustic" data-de="Akustisch">Acoustic</option>
+                        <option value="Classical" data-en="Classical" data-de="Klassisch">Classical</option>
+                        <option value="Other" data-en="Other (please specify in special requests)" data-de="Andere (bitte in besonderen Wünschen angeben)">Other (please specify in special requests)</option>
+                    </select>
+                </div>
+
+                <!-- Love Story -->
+                <div class="form-group">
+                    <label for="love-story" data-en="Your Love Story" data-de="Ihre Liebesgeschichte">Your Love Story <span class="required">*</span></label>
+                    <textarea id="love-story" name="Love Story" required class="form-textarea" 
+                        placeholder="Tell us your love story! How did you meet? What makes your relationship special? Include important dates, places, shared memories, inside jokes, or anything that makes your love unique. The more details you share, the more personalized your song will be!" 
+                        data-en-placeholder="Tell us your love story! How did you meet? What makes your relationship special? Include important dates, places, shared memories, inside jokes, or anything that makes your love unique. The more details you share, the more personalized your song will be!"
+                        data-de-placeholder="Erzählen Sie uns Ihre Liebesgeschichte! Wie haben Sie sich kennengelernt? Was macht Ihre Beziehung besonders? Fügen Sie wichtige Daten, Orte, gemeinsame Erinnerungen, Insider-Witze oder alles hinzu, was Ihre Liebe einzigartig macht. Je mehr Details Sie teilen, desto persönlicher wird Ihr Lied!"></textarea>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-group">
+                    <label for="special-requests" data-en="Special Requests or Preferences" data-de="Besondere Wünsche oder Vorlieben">Special Requests or Preferences</label>
+                    <textarea id="special-requests" name="Special Requests" class="form-textarea" 
+                        placeholder="Any specific words, phrases, or themes you'd like included? Any words or topics to avoid? Specific musical instruments or vocal style preferences? Reference songs you like?"
+                        data-en-placeholder="Any specific words, phrases, or themes you'd like included? Any words or topics to avoid? Specific musical instruments or vocal style preferences? Reference songs you like?"
+                        data-de-placeholder="Bestimmte Wörter, Phrasen oder Themen, die Sie gerne einbeziehen möchten? Wörter oder Themen, die vermieden werden sollen? Spezifische Musikinstrumente oder Gesangsstil-Vorlieben? Referenzlieder, die Sie mögen?"></textarea>
+                </div>
+
+                <!-- Vocal Style -->
+                <div class="form-group">
+                    <label for="vocal-style" data-en="Preferred Vocal Style" data-de="Bevorzugter Gesangsstil">Preferred Vocal Style</label>
+                    <select id="vocal-style" name="Vocal Style" class="form-select">
+                        <option value="" data-en="Select Vocal Style" data-de="Gesangsstil wählen">Select Vocal Style</option>
+                        <option value="Male Solo" data-en="Male Solo" data-de="Männlicher Solo">Male Solo</option>
+                        <option value="Female Solo" data-en="Female Solo" data-de="Weiblicher Solo">Female Solo</option>
+                        <option value="Mixed (Male & Female)" data-en="Mixed (Male & Female)" data-de="Gemischt (Männlich & Weiblich)">Mixed (Male & Female)</option>
+                        <option value="No Preference" data-en="No Preference" data-de="Keine Präferenz">No Preference</option>
+                    </select>
+                </div>
+
+                <!-- Delivery Instructions -->
+                <div class="form-group">
+                    <label for="delivery-notes" data-en="Delivery Instructions" data-de="Lieferanweisungen">Delivery Instructions</label>
+                    <textarea id="delivery-notes" name="Delivery Instructions" class="form-textarea" 
+                        placeholder="Any special instructions for delivery? Alternative email address? Preferred delivery time? We'll call you for consultation as part of our premium service."
+                        data-en-placeholder="Any special instructions for delivery? Alternative email address? Preferred delivery time? We'll call you for consultation as part of our premium service."
+                        data-de-placeholder="Besondere Anweisungen für die Lieferung? Alternative E-Mail-Adresse? Bevorzugte Lieferzeit? Wir rufen Sie zur Beratung als Teil unseres Premium-Service an."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary submit-btn" data-en="Submit Order" data-de="Bestellung absenden">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
