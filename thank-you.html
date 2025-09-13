@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Thank You for Your Order | Wedding Song" data-de="Vielen Dank für Ihre Bestellung | Wedding Song">Thank You for Your Order | Wedding Song</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for thank you page */
+        .thank-you-container {
+            background: #e6d9d8;
+            min-height: 100vh;
+            padding: 120px 0 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .thank-you-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(254, 252, 248, 0.2));
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .thank-you-title {
+            font-family: 'GreatVibes', 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(165deg, #d4af37, #f4d03f, #e8b4cb, #d4af37);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+        
+        .thank-you-subtitle {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .next-steps {
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .steps-list li {
+            padding: 0.8rem 0;
+            color: #666;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .step-number {
+            background: #d4af37;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .contact-info {
+            background: rgba(232, 180, 203, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(232, 180, 203, 0.2);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-info h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-right: 1rem;
+        }
+        
+        .contact-details {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-weight: 500;
+            color: #d4af37;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .contact-value {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .contact-value a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-value a:hover {
+            color: #d4af37;
+        }
+        
+        .back-button {
+            margin-top: 2rem;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            background: linear-gradient(165deg, #d4af37, #f4d03f, #e8b4cb, #d4af37);
+            background-size: 300% auto;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .back-button:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .delivery-time {
+            background: rgba(244, 208, 63, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(244, 208, 63, 0.2);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-weight: 500;
+            color: #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 100px 0 60px;
+            }
+            
+            .thank-you-card {
+                padding: 2rem;
+                width: 95%;
+            }
+            
+            .thank-you-title {
+                font-size: 2.5rem;
+            }
+            
+            .thank-you-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher desktop-only">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-de" class="lang-btn">DE</button>
+    </div>
+
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="Logo2.png" alt="Wedding Song" class="logo-img">
+        </div>
+        
+        <!-- Mobile Language Switcher -->
+        <div class="language-switcher mobile-only">
+            <button id="lang-en-mobile" class="lang-btn">EN</button>
+            <button id="lang-de-mobile" class="lang-btn">DE</button>
+        </div>
+    </header>
+
+    <!-- Thank You Container -->
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <span class="success-icon">✨</span>
+            <h1 class="thank-you-title" data-en="Thank You!" data-de="Vielen Dank!">Thank You!</h1>
+            <h2 class="thank-you-subtitle" data-en="Your Order Has Been Received" data-de="Ihre Bestellung ist eingegangen">Your Order Has Been Received</h2>
+            
+            <div class="thank-you-message">
+                <p data-en="We are absolutely thrilled to create your personalized wedding song! Your love story is unique, and we can't wait to transform it into a beautiful musical masterpiece that you'll treasure forever." data-de="Wir freuen uns riesig darauf, Ihr persönliches Hochzeitslied zu erstellen! Ihre Liebesgeschichte ist einzigartig, und wir können es kaum erwarten, sie in ein wunderschönes musikalisches Meisterwerk zu verwandeln, das Sie für immer schätzen werden.">We are absolutely thrilled to create your personalized wedding song! Your love story is unique, and we can't wait to transform it into a beautiful musical masterpiece that you'll treasure forever.</p>
+            </div>
+
+            <div class="delivery-time">
+                <p data-en="⏰ Expected Delivery: 24-48 hours for your custom wedding song" data-de="⏰ Voraussichtliche Lieferung: 24-48 Stunden für Ihr individuelles Hochzeitslied">⏰ Expected Delivery: 24-48 hours for your custom wedding song</p>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3 data-en="What Happens Next?" data-de="Wie geht es weiter?">What Happens Next?</h3>
+                <ul class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <div>
+                            <strong data-en="Order Confirmation" data-de="Bestellbestätigung">Order Confirmation</strong><br>
+                            <span data-en="You will receive an email confirmation within the next few minutes with your order details." data-de="Sie erhalten innerhalb der nächsten Minuten eine E-Mail-Bestätigung mit Ihren Bestelldetails.">You will receive an email confirmation within the next few minutes with your order details.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <div>
+                            <strong data-en="Song Creation Process" data-de="Lied-Erstellungsprozess">Song Creation Process</strong><br>
+                            <span data-en="Our talented musicians and songwriters will carefully craft your personalized song based on your love story and preferences." data-de="Unsere talentierten Musiker und Songwriter werden sorgfältig Ihr persönliches Lied basierend auf Ihrer Liebesgeschichte und Ihren Wünschen erstellen.">Our talented musicians and songwriters will carefully craft your personalized song based on your love story and preferences.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <div>
+                            <strong data-en="Quality Review" data-de="Qualitätsprüfung">Quality Review</strong><br>
+                            <span data-en="We ensure every song meets our high standards before delivery to guarantee your complete satisfaction." data-de="Wir stellen sicher, dass jedes Lied unseren hohen Standards entspricht, bevor es geliefert wird, um Ihre vollständige Zufriedenheit zu garantieren.">We ensure every song meets our high standards before delivery to guarantee your complete satisfaction.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <div>
+                            <strong data-en="Song Delivery" data-de="Lied-Lieferung">Song Delivery</strong><br>
+                            <span data-en="Your finished wedding song will be delivered directly to your email inbox in high-quality audio format." data-de="Ihr fertiges Hochzeitslied wird direkt in Ihren E-Mail-Posteingang in hochwertiger Audioqualität geliefert.">Your finished wedding song will be delivered directly to your email inbox in high-quality audio format.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3 data-en="Need to Contact Us?" data-de="Müssen Sie uns kontaktieren?">Need to Contact Us?</h3>
+                <p data-en="If you have any questions, additional requests, or need to make changes to your order, we're here to help!" data-de="Wenn Sie Fragen haben, zusätzliche Wünsche oder Änderungen an Ihrer Bestellung vornehmen müssen, sind wir hier, um zu helfen!">If you have any questions, additional requests, or need to make changes to your order, we're here to help!</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-details">
+                            <div class="contact-label" data-en="Email" data-de="E-Mail">Email</div>
+                            <div class="contact-value">
+                                <a href="mailto:auftragweddingsong@gmail.com">auftragweddingsong@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <span class="contact-icon">⏰</span>
+                        <div class="contact-details">
+                            <div class="contact-label" data-en="Response Time" data-de="Antwortzeit">Response Time</div>
+                            <div class="contact-value" data-en="Within 2-4 hours" data-de="Innerhalb von 2-4 Stunden">Within 2-4 hours</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <span class="contact-icon">🎵</span>
+                        <div class="contact-details">
+                            <div class="contact-label" data-en="Revisions" data-de="Überarbeitungen">Revisions</div>
+                            <div class="contact-value" data-en="Included in your package" data-de="In Ihrem Paket enthalten">Included in your package</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <span class="contact-icon">💝</span>
+                        <div class="contact-details">
+                            <div class="contact-label" data-en="Special Requests" data-de="Besondere Wünsche">Special Requests</div>
+                            <div class="contact-value" data-en="Always welcome" data-de="Immer willkommen">Always welcome</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Website Button -->
+            <a href="index.html" class="back-button" data-en="Back to Website" data-de="Zurück zur Website">Back to Website</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
