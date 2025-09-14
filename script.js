@@ -256,6 +256,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const audioPlayerContainer = document.getElementById('audio-player-container');
     const audioElement = document.getElementById('sample-audio');
     const backgroundMusic = document.getElementById('background-music');
+    const currentSongTitle = document.getElementById('current-song-title');
+    const sampleSongBtns = document.querySelectorAll('.sample-song-btn');
     
     // Function to resume background music
     const resumeBackgroundMusic = function() {
@@ -276,6 +278,42 @@ document.addEventListener('DOMContentLoaded', function() {
             backgroundMusic.pause();
         }
     };
+    
+    // Function to switch songs
+    const switchSong = function(songFile, titleEn, titleDe) {
+        // Update audio source
+        audioElement.src = songFile;
+        
+        // Update current song title
+        if (currentSongTitle) {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const nowPlayingText = currentLang === 'en' ? 'Now Playing: ' : 'Aktuell: ';
+            const songTitle = currentLang === 'en' ? titleEn : titleDe;
+            currentSongTitle.textContent = nowPlayingText + songTitle;
+            
+            // Update data attributes for language switching
+            currentSongTitle.setAttribute('data-en', 'Now Playing: ' + titleEn);
+            currentSongTitle.setAttribute('data-de', 'Aktuell: ' + titleDe);
+        }
+        
+        // Update active button
+        sampleSongBtns.forEach(btn => btn.classList.remove('active'));
+        event.target.closest('.sample-song-btn').classList.add('active');
+        
+        // Play the new song
+        audioElement.play();
+    };
+    
+    // Add click handlers for sample song buttons
+    sampleSongBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const songFile = this.getAttribute('data-song');
+            const titleEn = this.getAttribute('data-title-en');
+            const titleDe = this.getAttribute('data-title-de');
+            
+            switchSong(songFile, titleEn, titleDe);
+        });
+    });
     
     if (closePlayerBtn && audioPlayerContainer && audioElement) {
         // When sample audio ends, resume background music

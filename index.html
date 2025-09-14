@@ -59,11 +59,32 @@
             <!-- Audio Player Section (Hidden by default) -->
             <div id="audio-player-container" class="audio-player-container">
                 <div class="audio-player">
-                    <h3 data-en="Sample: Durch Sturm und Feuer" data-de="Beispiel: Durch Sturm und Feuer">Sample: Durch Sturm und Feuer</h3>
+                    <h3 data-en="Sample Songs" data-de="Beispiellieder">Sample Songs</h3>
+                    
+                    <!-- Song Selection Buttons -->
+                    <div class="sample-songs-list">
+                        <button class="sample-song-btn active" data-song="Durch Sturm und Feuer.mp3" data-title-en="Durch Sturm und Feuer" data-title-de="Durch Sturm und Feuer">
+                            <span data-en="Durch Sturm und Feuer" data-de="Durch Sturm und Feuer">Durch Sturm und Feuer</span>
+                        </button>
+                        <button class="sample-song-btn" data-song="From Coffee Stains to Wedding Rings.mp3" data-title-en="From Coffee Stains to Wedding Rings" data-title-de="From Coffee Stains to Wedding Rings">
+                            <span data-en="From Coffee Stains to Wedding Rings" data-de="From Coffee Stains to Wedding Rings">From Coffee Stains to Wedding Rings</span>
+                        </button>
+                        <button class="sample-song-btn" data-song="Forever Begins.mp3" data-title-en="Forever Begins" data-title-de="Forever Begins">
+                            <span data-en="Forever Begins" data-de="Forever Begins">Forever Begins</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Current Song Display -->
+                    <div class="current-song">
+                        <h4 id="current-song-title" data-en="Now Playing: Durch Sturm und Feuer" data-de="Aktuell: Durch Sturm und Feuer">Now Playing: Durch Sturm und Feuer</h4>
+                    </div>
+                    
+                    <!-- Audio Player -->
                     <audio id="sample-audio" controls>
                         <source src="Durch Sturm und Feuer.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
+                    
                     <button id="close-player" class="btn btn-outline" data-en="Close" data-de="Schließen">Close</button>
                 </div>
             </div>
@@ -280,9 +301,15 @@
             <h3 data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</h3>
             <div class="popup-body">
                 <form action="https://formsubmit.co/suppweddingsong@gmail.com" method="POST" class="contact-form">
+                    <!-- Hidden fields for FormSubmit configuration -->
+                    <input type="hidden" name="_subject" value="New Contact Form Message - Wedding Song">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting Wedding Song! We have received your message and will get back to you as soon as possible. If you have any urgent questions, please feel free to call us at +49 1511 4423242 or email us directly at gameavatarai@gmail.com. We look forward to helping you create the perfect wedding song!">
+                    
                     <div class="form-group">
                         <label for="name" data-en="Your Name" data-de="Ihr Name">Your Name</label>
-                        <input type="text" id="name" name="Name 1" required class="form-input" placeholder="John & Jane Doe">
+                        <input type="text" id="name" name="Name" required class="form-input" placeholder="John & Jane Doe">
                     </div>
                     <div class="form-group">
                         <label for="question" data-en="Your Question" data-de="Ihre Frage">Your Question</label>
