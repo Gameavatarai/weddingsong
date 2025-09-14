@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
     
-    // Add click handlers for CTA buttons
-    document.querySelectorAll('.btn').forEach(button => {
+    // Add click handlers for CTA buttons (excluding sample song buttons)
+    document.querySelectorAll('.btn:not(.sample-song-btn)').forEach(button => {
         button.addEventListener('click', function(e) {
             console.log('Button clicked:', this.textContent); // Debug log
             

@@ -1210,26 +1210,30 @@ html {
 
 /* Sample Songs List Styles */
 .sample-songs-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     margin-bottom: 2rem;
 }
 
 .sample-song-btn {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(254, 252, 248, 0.15));
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    border-radius: 20px;
-    padding: 16px 20px;
-    cursor: pointer;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+    background-size: 200% 200%;
+    animation: gradientAnimation 8s ease infinite, gradientPulse 6s ease-in-out infinite;
+    backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 12px 24px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
-    font-size: 1.1rem;
-    color: #4a4a4a;
-    backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
     text-align: center;
-    min-height: 60px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1244,38 +1248,34 @@ html {
     height: 200%;
     background: linear-gradient(165deg, transparent, rgba(212, 175, 55, 0.05), transparent);
     transform: rotate(45deg);
+    animation: shimmer 8s linear infinite;
     z-index: 1;
     pointer-events: none;
-    transition: all 0.3s ease;
 }
 
 .sample-song-btn:hover {
-    background: linear-gradient(145deg, rgba(212, 175, 55, 0.25), rgba(244, 208, 63, 0.25));
-    border-color: rgba(212, 175, 55, 0.6);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-}
-
-.sample-song-btn:hover::before {
-    background: linear-gradient(165deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    background: linear-gradient(165deg, rgba(212, 175, 55, 0.3), rgba(244, 208, 63, 0.3), rgba(232, 180, 203, 0.3), rgba(212, 175, 55, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    color: #d4af37;
 }
 
 .sample-song-btn.active {
-    background: linear-gradient(165deg, rgba(212, 175, 55, 0.7), rgba(244, 208, 63, 0.7), rgba(232, 180, 203, 0.7), rgba(212, 175, 55, 0.7));
-    border-color: rgba(212, 175, 55, 0.9);
+    background: linear-gradient(165deg, rgba(212, 175, 55, 0.5), rgba(244, 208, 63, 0.5), rgba(232, 180, 203, 0.5), rgba(212, 175, 55, 0.5));
     color: white;
-    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
     transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .sample-song-btn.active::before {
-    background: linear-gradient(165deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background: linear-gradient(165deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 .sample-song-btn span {
     position: relative;
     z-index: 2;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     display: block;
 }
@@ -1283,10 +1283,10 @@ html {
 /* Current Song Display */
 .current-song {
     margin-bottom: 2rem;
-    padding: 20px;
-    background: linear-gradient(145deg, rgba(212, 175, 55, 0.15), rgba(244, 208, 63, 0.15));
-    border-radius: 15px;
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    padding: 16px 20px;
+    background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), rgba(244, 208, 63, 0.1));
+    border-radius: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
     backdrop-filter: blur(10px);
     text-align: center;
     position: relative;
@@ -1300,15 +1300,15 @@ html {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(165deg, transparent, rgba(212, 175, 55, 0.08), transparent);
+    background: linear-gradient(165deg, transparent, rgba(212, 175, 55, 0.05), transparent);
     transform: rotate(45deg);
     z-index: 1;
     pointer-events: none;
 }
 
 .current-song h4 {
-    font-size: 1.3rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 400;
     margin: 0;
     color: #4a4a4a;
     background: linear-gradient(165deg, #d4af37, #f4d03f, #e8b4cb, #d4af37);
@@ -1322,19 +1322,14 @@ html {
 
 /* Mobile responsive for sample songs */
 @media (max-width: 768px) {
-    .sample-songs-list {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-    
     .sample-song-btn {
-        padding: 14px 16px;
+        padding: 10px 20px;
         font-size: 1rem;
-        min-height: 50px;
+        min-height: 45px;
     }
     
     .current-song {
-        padding: 16px;
+        padding: 14px 18px;
         margin-bottom: 1.5rem;
     }
     
