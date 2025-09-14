@@ -249,7 +249,7 @@
                 <div class="footer-section">
                     <h4 data-en="Support" data-de="Support">Support</h4>
                     <ul>
-                        <li><a href="#" data-en="FAQ" data-de="FAQ">FAQ</a></li>
+                        <li><a href="#" id="faq-link" data-en="FAQ" data-de="FAQ">FAQ</a></li>
                         <li><a href="#" data-en="Contact Us" data-de="Kontaktieren Sie uns">Contact Us</a></li>
                         <li><a href="#" id="pricing-policy-link" data-en="Pricing Policy" data-de="Preisrichtlinie">Pricing Policy</a></li>
                     </ul>
@@ -263,7 +263,7 @@
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Contact" data-de="Kontakt">Contact</h4>
-                    <p>Email: gameavatarai@gmail.com</p>
+                    <p>Email: info@wedding-song.de</p>
                     <p data-en="Phone: +49 1511 4423242" data-de="Telefon: +49 1511 4423242">Phone: +49 1511 4423242</p>
                 </div>
             </div>
@@ -341,6 +341,105 @@
                 </p>
             </div>
             <button id="close-thank-you" class="btn btn-primary" data-en="Close" data-de="Schließen">Close</button>
+        </div>
+    </div>
+
+    <!-- FAQ Popup -->
+    <div id="faq-popup" class="popup-container">
+        <div class="popup-content faq-popup-content">
+            <h3 data-en="Frequently Asked Questions" data-de="Häufig gestellte Fragen">Frequently Asked Questions</h3>
+            <div class="popup-body faq-body">
+                <div class="faq-item">
+                    <div class="faq-question" data-en="How long does it take to create my wedding song?" data-de="Wie lange dauert es, mein Hochzeitslied zu erstellen?">
+                        How long does it take to create my wedding song?
+                    </div>
+                    <div class="faq-answer" data-en="Our standard delivery time is 24-48 hours for all packages. Premium and Deluxe packages receive priority processing within 24 hours. We also offer express delivery within 12 hours for an additional $50." data-de="Unsere Standard-Lieferzeit beträgt 24-48 Stunden für alle Pakete. Premium- und Deluxe-Pakete erhalten eine Prioritätsbearbeitung innerhalb von 24 Stunden. Wir bieten auch eine Express-Lieferung innerhalb von 12 Stunden für zusätzliche $50 an.">
+                        Our standard delivery time is 24-48 hours for all packages. Premium and Deluxe packages receive priority processing within 24 hours. We also offer express delivery within 12 hours for an additional $50.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What information do I need to provide for my custom song?" data-de="Welche Informationen muss ich für mein individuelles Lied angeben?">
+                        What information do I need to provide for my custom song?
+                    </div>
+                    <div class="faq-answer" data-en="We'll ask for your names, how you met, special moments in your relationship, your wedding date, preferred music style, and any specific lyrics or themes you'd like included. The more details you provide, the more personalized your song will be!" data-de="Wir fragen nach Ihren Namen, wie Sie sich kennengelernt haben, besonderen Momenten in Ihrer Beziehung, Ihrem Hochzeitsdatum, bevorzugtem Musikstil und spezifischen Texten oder Themen, die Sie einbeziehen möchten. Je mehr Details Sie angeben, desto persönlicher wird Ihr Lied!">
+                        We'll ask for your names, how you met, special moments in your relationship, your wedding date, preferred music style, and any specific lyrics or themes you'd like included. The more details you provide, the more personalized your song will be!
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Can I request revisions if I'm not satisfied?" data-de="Kann ich Überarbeitungen anfordern, wenn ich nicht zufrieden bin?">
+                        Can I request revisions if I'm not satisfied?
+                    </div>
+                    <div class="faq-answer" data-en="Yes! Basic package includes 1 revision, Premium includes 2 revisions, and Deluxe includes unlimited revisions. Additional revisions can be purchased for $15 each. We want you to be completely happy with your song!" data-de="Ja! Das Basis-Paket beinhaltet 1 Überarbeitung, Premium beinhaltet 2 Überarbeitungen und Deluxe beinhaltet unbegrenzte Überarbeitungen. Zusätzliche Überarbeitungen können für jeweils $15 erworben werden. Wir möchten, dass Sie vollkommen zufrieden mit Ihrem Lied sind!">
+                        Yes! Basic package includes 1 revision, Premium includes 2 revisions, and Deluxe includes unlimited revisions. Additional revisions can be purchased for $15 each. We want you to be completely happy with your song!
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What music genres do you offer?" data-de="Welche Musikgenres bieten Sie an?">
+                        What music genres do you offer?
+                    </div>
+                    <div class="faq-answer" data-en="Basic package focuses on ballads, while Premium and Deluxe packages can be created in any genre including pop, rock, country, jazz, acoustic, R&B, and more. Just let us know your preference when ordering!" data-de="Das Basis-Paket konzentriert sich auf Balladen, während Premium- und Deluxe-Pakete in jedem Genre erstellt werden können, einschließlich Pop, Rock, Country, Jazz, Akustik, R&B und mehr. Teilen Sie uns einfach Ihre Präferenz bei der Bestellung mit!">
+                        Basic package focuses on ballads, while Premium and Deluxe packages can be created in any genre including pop, rock, country, jazz, acoustic, R&B, and more. Just let us know your preference when ordering!
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="How will I receive my wedding song?" data-de="Wie erhalte ich mein Hochzeitslied?">
+                        How will I receive my wedding song?
+                    </div>
+                    <div class="faq-answer" data-en="Your personalized wedding song will be delivered directly to your email inbox. Basic package includes MP3 format, while Premium and Deluxe packages include both high-quality WAV and MP3 files for maximum compatibility." data-de="Ihr personalisiertes Hochzeitslied wird direkt an Ihren E-Mail-Posteingang geliefert. Das Basis-Paket beinhaltet das MP3-Format, während Premium- und Deluxe-Pakete sowohl hochwertige WAV- als auch MP3-Dateien für maximale Kompatibilität enthalten.">
+                        Your personalized wedding song will be delivered directly to your email inbox. Basic package includes MP3 format, while Premium and Deluxe packages include both high-quality WAV and MP3 files for maximum compatibility.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Can I use the song for my wedding ceremony?" data-de="Kann ich das Lied für meine Hochzeitszeremonie verwenden?">
+                        Can I use the song for my wedding ceremony?
+                    </div>
+                    <div class="faq-answer" data-en="Absolutely! Your custom wedding song is created specifically for you and can be used for your ceremony, reception, first dance, or any other wedding-related event. You own the rights to use your personalized song." data-de="Absolut! Ihr individuelles Hochzeitslied wird speziell für Sie erstellt und kann für Ihre Zeremonie, Ihren Empfang, Ihren ersten Tanz oder jede andere hochzeitsbezogene Veranstaltung verwendet werden. Sie besitzen die Rechte zur Nutzung Ihres personalisierten Liedes.">
+                        Absolutely! Your custom wedding song is created specifically for you and can be used for your ceremony, reception, first dance, or any other wedding-related event. You own the rights to use your personalized song.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="What if I need my song in a different language?" data-de="Was ist, wenn ich mein Lied in einer anderen Sprache benötige?">
+                        What if I need my song in a different language?
+                    </div>
+                    <div class="faq-answer" data-en="We can create songs in multiple languages including English, German, Spanish, French, and more. Simply specify your language preference when placing your order, and our specialists will craft your song accordingly." data-de="Wir können Lieder in mehreren Sprachen erstellen, einschließlich Englisch, Deutsch, Spanisch, Französisch und mehr. Geben Sie einfach Ihre Sprachpräferenz bei der Bestellung an, und unsere Spezialisten werden Ihr Lied entsprechend erstellen.">
+                        We can create songs in multiple languages including English, German, Spanish, French, and more. Simply specify your language preference when placing your order, and our specialists will craft your song accordingly.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Do you offer refunds?" data-de="Bieten Sie Rückerstattungen an?">
+                        Do you offer refunds?
+                    </div>
+                    <div class="faq-answer" data-en="Yes, we offer a 100% satisfaction guarantee. If you're not completely satisfied with your song after all included revisions, we'll provide a full refund. Your happiness is our priority!" data-de="Ja, wir bieten eine 100%ige Zufriedenheitsgarantie. Wenn Sie nach allen enthaltenen Überarbeitungen nicht vollständig mit Ihrem Lied zufrieden sind, erstatten wir den vollen Betrag zurück. Ihr Glück ist unsere Priorität!">
+                        Yes, we offer a 100% satisfaction guarantee. If you're not completely satisfied with your song after all included revisions, we'll provide a full refund. Your happiness is our priority!
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="Can I order a song as a gift for someone else?" data-de="Kann ich ein Lied als Geschenk für jemand anderen bestellen?">
+                        Can I order a song as a gift for someone else?
+                    </div>
+                    <div class="faq-answer" data-en="Absolutely! Many customers order personalized wedding songs as gifts for engaged couples, newlyweds, or anniversary celebrations. Just provide the couple's story and details, and we'll create a beautiful surprise for them." data-de="Absolut! Viele Kunden bestellen personalisierte Hochzeitslieder als Geschenke für verlobte Paare, Frischvermählte oder Jubiläumsfeiern. Geben Sie einfach die Geschichte und Details des Paares an, und wir erstellen eine wunderschöne Überraschung für sie.">
+                        Absolutely! Many customers order personalized wedding songs as gifts for engaged couples, newlyweds, or anniversary celebrations. Just provide the couple's story and details, and we'll create a beautiful surprise for them.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" data-en="How do I contact customer support?" data-de="Wie kontaktiere ich den Kundensupport?">
+                        How do I contact customer support?
+                    </div>
+                    <div class="faq-answer" data-en="You can reach us via email at info@wedding-song.de or call us at +49 1511 4423242. Premium and Deluxe customers also receive priority phone support. We're here to help make your wedding song perfect!" data-de="Sie können uns per E-Mail unter info@wedding-song.de erreichen oder uns unter +49 1511 4423242 anrufen. Premium- und Deluxe-Kunden erhalten auch prioritären Telefonsupport. Wir sind hier, um Ihr Hochzeitslied perfekt zu machen!">
+                        You can reach us via email at info@wedding-song.de or call us at +49 1511 4423242. Premium and Deluxe customers also receive priority phone support. We're here to help make your wedding song perfect!
+                    </div>
+                </div>
+            </div>
+            <button id="close-faq" class="btn btn-outline" data-en="Close" data-de="Schließen">Close</button>
         </div>
     </div>
 

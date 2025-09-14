@@ -436,6 +436,57 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Set up FAQ popup
+    const faqLink = document.getElementById('faq-link');
+    const faqPopup = document.getElementById('faq-popup');
+    const closeFaq = document.getElementById('close-faq');
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqLink && faqPopup && closeFaq) {
+        // Open popup when clicking the FAQ link
+        faqLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            faqPopup.classList.add('active');
+        });
+        
+        // Close popup when clicking the close button
+        closeFaq.addEventListener('click', function() {
+            faqPopup.classList.remove('active');
+        });
+        
+        // Close popup when clicking outside the content
+        faqPopup.addEventListener('click', function(e) {
+            if (e.target === faqPopup) {
+                faqPopup.classList.remove('active');
+            }
+        });
+        
+        // Close popup when pressing ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && faqPopup.classList.contains('active')) {
+                faqPopup.classList.remove('active');
+            }
+        });
+    }
+    
+    // Set up FAQ accordion functionality
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (question) {
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
+    });
+    
     // Set up contact form popup
     const contactUsLinks = document.querySelectorAll('a[data-en="Contact Us"], a[data-de="Kontaktieren Sie uns"]');
     const contactFormPopup = document.getElementById('contact-form-popup');
