@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Function to switch songs
-    const switchSong = function(songFile, titleEn, titleDe) {
+    const switchSong = function(songFile, titleEn, titleDe, clickedButton) {
         // Update audio source
         audioElement.src = songFile;
         
@@ -298,20 +298,25 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update active button
         sampleSongBtns.forEach(btn => btn.classList.remove('active'));
-        event.target.closest('.sample-song-btn').classList.add('active');
+        if (clickedButton) {
+            clickedButton.classList.add('active');
+        }
         
         // Play the new song
-        audioElement.play();
+        audioElement.play().catch(function(error) {
+            console.log("Could not play audio:", error);
+        });
     };
     
     // Add click handlers for sample song buttons
     sampleSongBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
             const songFile = this.getAttribute('data-song');
             const titleEn = this.getAttribute('data-title-en');
             const titleDe = this.getAttribute('data-title-de');
             
-            switchSong(songFile, titleEn, titleDe);
+            switchSong(songFile, titleEn, titleDe, this);
         });
     });
     
