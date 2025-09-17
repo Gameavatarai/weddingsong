@@ -13,14 +13,14 @@
 }
 
 @font-face {
-    font-family: 'Opencare';
-    src: url('Opencare.ttf') format('truetype');
+    font-family: 'Cossette';
+    src: url('Cossette.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Opencare', 'Poppins', sans-serif;
+    font-family: 'Cossette', 'Poppins', sans-serif;
     line-height: 1.6;
     color: #4a4a4a;
     overflow-x: hidden;
